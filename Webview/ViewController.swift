@@ -16,10 +16,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Directly load from URL
         var urlPath = "http://www.cafesuda.com"
         var url = NSURL(string: urlPath)
         var request = NSURLRequest(URL: url!)
         myWebview.loadRequest(request)
+        
+        // Directly load from html
+        var html = "<html><head></head><body><h1>Hello world!</h1></body></html>"
+        myWebview.loadHTMLString(html, baseURL: nil)
     }
 
     override func didReceiveMemoryWarning() {
